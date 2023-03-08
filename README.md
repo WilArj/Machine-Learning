@@ -8,16 +8,16 @@ ML:
 			 - Utilizamos una BD de Kaggle para realizar el ETL de los datos.
 			
 	* Wili 	- M5 - 01 - Python Notebook:
-			 - Repaso conceptos básicos Python.
+			 - Teoría conceptos básicos Python.
 			
 	* Wili 	- M5 - 02 - Condicionales:
-			 - Repaso condicionales Python.
+			 - Teoría condicionales Python.
 			
 	* Wili 	- M5 - 03 - Bucles:
-			 - Repaso bucles Python.
+			 - Teoría bucles Python.
 			
 	* Wili 	- M5 - 04 - Funciones:
-			 - Repaso funciones Python.
+			 - Teoría funciones Python.
 			
 	* Wili 	- M5 - 06 - Introducción a Machine Learning con Scikit-Learn:
 			 - Introducción a ML usando load_boston.
