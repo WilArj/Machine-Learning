@@ -1,6 +1,6 @@
 # Machine-Learning
 
-Machine Learning - Python
+Machine Learning - Python: Repositorio con resumen de mis trabajos en el area de Machine-Learning, AI y Big Data en general.
  
 ---
 ### ML:
