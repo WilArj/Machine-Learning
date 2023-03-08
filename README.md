@@ -40,7 +40,8 @@ Machine Learning - Python:	Repositorio con resumen de mis trabajos en el area de
 			 	~ Transformamos los datos buscando dividir los vuelos entre exitosos y no exitosos.
 			
 	* Wili 	- SpaceX - 4 - EDA with Data Visualization:
-			 	~ Buscamos visualizaciones interesantes sobre los datos obtenidos, buscando patrones y relaciones entre ellos.
+			 	~ Buscamos visualizaciones interesantes sobre los datos obtenidos,
+				  buscando patrones y relaciones entre ellos.
 			
 
 ---	
