@@ -50,3 +50,11 @@ Machine Learning - Python:	Repositorio con resumen de mis trabajos en el area de
 
 	* Wili 	- Prophet - Predecir el valor de Bitcoin:
 				~ Predecimos la evolución del valor de Ethereum usando un modelo de regresión.
+			
+
+---	
+				
+### Proyectos:
+
+	* Wili - Red neuronal desde cero:
+				~ Programación de red neuronal desde cero usando función de activación sigmoide. El objetivo es clusterizar dos grupos de datos, en 				      este caso dos círculos concéntricos generados aleatoriamente.
