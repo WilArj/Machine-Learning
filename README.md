@@ -3,11 +3,10 @@
 Machine Learning - Python
  
 ---
---
 ML:
 
 	* Wili 	- M4 - ETL:
-			 - Utilizamos una BD de Kaggle para realizar el ETL de los datos.
+			 	~ Utilizamos una BD de Kaggle para realizar el ETL de los datos.
 			
 	* Wili 	- M5 - 01 - Python Notebook:
 			 	~ Teoría conceptos básicos Python.
@@ -31,7 +30,7 @@ ML:
 			 	~ Generación de mapas.
 			
 ---
---
+
 SpaceX:
 
 	* Wili 	- SpaceX - 1 - Data Collection Api:
@@ -45,7 +44,7 @@ SpaceX:
 			
 
 ---	
---
+
 Prophet:
 
 	* Wili 	- Prophet - Predecir el valor de Bitcoin:
