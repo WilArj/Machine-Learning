@@ -5,6 +5,7 @@ Machine Learning - Python
 ---
 --
 ML:
+
 	* Wili 	- M4 - ETL:
 			 - Utilizamos una BD de Kaggle para realizar el ETL de los datos.
 			
@@ -32,6 +33,7 @@ ML:
 ---
 --
 SpaceX:
+
 	* Wili 	- SpaceX - 1 - Data Collection Api:
 			 	~ Desde la API de SpaceX descargamos info sobre vuelos de los Falcon.
 			
@@ -45,5 +47,6 @@ SpaceX:
 ---	
 --
 Prophet:
+
 	* Wili 	- Prophet - Predecir el valor de Bitcoin:
 				~ Predecimos la evolución del valor de Ethereum usando un modelo de regresión.
