@@ -13,7 +13,7 @@ width, height = 1000, 1000
 screen = pygame.display.set_mode((width, height))
 
 # Número de celdas en x e y
-nxC, nyC = 25, 25
+nxC, nyC = 50, 50
 
 # Dimensiones de cada celda según dimensiones de pantalla y número de celdas fijadas
 dimCW = (width)/nxC
@@ -51,39 +51,59 @@ gameState[15,20]=1
 gameState[15,21]=1
 gameState[15,22]=1
 
-
+# Variable para controlar el flujo del juego
+pauseExect = False
 
 # Bucle de ejecución
 while True:
 
+    #  Para cada iteración, copiamos el estado del juego, rellenamos el fondo para no sobreescribir gráficos y damos un timesleep de 0.01 segundos
     newGameState = np.copy(gameState)
     screen.fill(bg)
-    time.sleep(0.01)
+    time.sleep(0.1)
+
+    # Registramos eventos de teclado y ratón
+    ev = pygame.event.get()
+
+    for event in ev:
+        if event.type == pygame.KEYDOWN:
+            pauseExect = not pauseExect
+
+        mouseClick = pygame.mouse.get_pressed()
+        print(mouseClick)
+
+        if sum(mouseClick) > 0:
+            posX, posY = pygame.mouse.get_pos()
+            celX, celY = int(np.floor(posX/dimCW)), int(np.floor(posY/dimCH))
+            newGameState[celX,celY] = not gameState[celX,celY]
 
     for y in range(0, nxC):
         for x in range(0, nyC):
-
-            # #Calculamos el número de vecinos cercanos usando la técnica toroidal para hacer que lo que desaparezca por un límite de la pantalla aparezca por el otro (muy interesante el uso del módulo % )
-            nn =  gameState[(x-1) % nxC, (y-1) % nyC] + \
-                  gameState[(x)   % nxC, (y-1) % nyC] + \
-                  gameState[(x+1) % nxC, (y-1) % nyC] + \
-                  gameState[(x-1) % nxC, (y)   % nyC] + \
-                  gameState[(x+1) % nxC, (y)   % nyC] + \
-                  gameState[(x-1) % nxC, (y+1) % nyC] + \
-                  gameState[(x)   % nxC, (y+1) % nyC] + \
-                  gameState[(x+1) % nxC, (y+1) % nyC]
             
-            print("total de vecinos", nn)
-            print(gameState[x,y])
-
-            # # Regla 1: Una céluna muerta con exactamente 3 vecinas vivas, revive
-            if gameState[x, y] == 0 and nn == 3:
-                newGameState[x, y] = 1
+            if not pauseExect:
 
 
-            # # Regla 2: Una célula viva con menos de 2 o más de 3 vecinas vivas, muere
-            elif gameState[x, y] == 1 and (nn < 2 or nn > 3):
-                newGameState[x, y] = 0
+                # Calculamos el número de vecinos cercanos usando la técnica toroidal para hacer que lo que desaparezca por un límite de la pantalla aparezca por el otro (muy interesante el uso del módulo % )
+                nn =  gameState[(x-1) % nxC, (y-1) % nyC] + \
+                    gameState[(x)   % nxC, (y-1) % nyC] + \
+                    gameState[(x+1) % nxC, (y-1) % nyC] + \
+                    gameState[(x-1) % nxC, (y)   % nyC] + \
+                    gameState[(x+1) % nxC, (y)   % nyC] + \
+                    gameState[(x-1) % nxC, (y+1) % nyC] + \
+                    gameState[(x)   % nxC, (y+1) % nyC] + \
+                    gameState[(x+1) % nxC, (y+1) % nyC]
+                
+                #print("total de vecinos", nn)
+                #print(gameState[x,y])
+
+                # # Regla 1: Una céluna muerta con exactamente 3 vecinas vivas, revive
+                if gameState[x, y] == 0 and nn == 3:
+                    newGameState[x, y] = 1
+
+
+                # # Regla 2: Una célula viva con menos de 2 o más de 3 vecinas vivas, muere
+                elif gameState[x, y] == 1 and (nn < 2 or nn > 3):
+                    newGameState[x, y] = 0
 
             # # Creamos el polígono de cada celda
             poly = [((x)    * dimCW, y * dimCH),
@@ -96,7 +116,7 @@ while True:
             if newGameState[x, y] == 0:
                 pygame.draw.polygon(screen, (128, 128, 128), poly, 1)
             else:
-                pygame.draw.polygon(screen, (240, 240, 240), poly, 0)
+                pygame.draw.polygon(screen, (192, 192, 192), poly, 0)
 
 
     gameState = np.copy(newGameState)
