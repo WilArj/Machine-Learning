@@ -3,7 +3,7 @@
 Machine Learning - Python:	Repositorio con resumen de mis trabajos en el area de Machine-Learning, AI y Big Data en general.
  
 ---
-### ML:
+### ML y Python teórico:
 
 	* Wili 	- M4 - ETL:
 			 	~ Utilizamos una BD de Kaggle para realizar el ETL de los datos.
